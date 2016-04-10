@@ -14,7 +14,17 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+
+  param = [a,b,c].sort
+  raise TriangleError.new if param[0] + param[1] <= param[2]
+
+  if a == b && a == c
+  	return :equilateral
+  elsif a == b || b == c || a == c
+  	return :isosceles
+  else
+  	return :scalene
+  end
 end
 
 # Error class used in part 2.  No need to change this code.
